@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Product>
+
+<style>
+    th {
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid #dee3e0;
+    }
+</style>
+
+
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<button type="button" class="btn btn-link">Link</button>
+
+<br />
+<br />
+<br />
+<br />
+
+
+
+<h1>Products</h1>
+
+<table class="table table-striped table-dark table-hover">
+        <tr>
+            <th><a asp-action="Index">ProductID</a></th>
+            <th><a asp-action="Index">Name</a></th>
+            <th><a asp-action="Index">Price</a></th>
+            <th><a asp-action="Index">CategoryID</a></th>
+            <th><a asp-action="Index">OnSale</a></th>
+            <th><a asp-action="Index">StockLevel</a></th>
+        </tr>
+
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td><a href=/Product/ViewProduct/@product.ProductID>@product.ProductID</a></td>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.CategoryID</td>
+                <td>@product.OnSale</td>
+                <td>@product.StockLevel</td>
+            </tr>
+
+        }
+    </table>
